@@ -25,3 +25,12 @@ body {
     padding: 20px;
     font-size: 12px;
 }
+
+#gameScreen {
+    display: none;
+}
+
+#gardenImage {
+    width: 100%;
+    height: auto;
+}
