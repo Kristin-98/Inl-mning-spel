@@ -11,3 +11,12 @@ function startGame() {
     document.getElementById("gameScreen").style.display = "block";
     
 }
+
+function plantFlowers() {
+    console.log();
+}
+
+function loadStartScene() {
+    const text = document.createElement("p");
+    text.textContent
+}

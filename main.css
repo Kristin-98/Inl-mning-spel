@@ -28,9 +28,28 @@ body {
 
 #gameScreen {
     display: none;
+    color: azure;
 }
 
 #gardenImage {
+    position: relative;
     width: 100%;
     height: auto;
+}
+
+.chooseButton {
+    justify-content: center;
+    display: flex;
+    top: 40%;
+    left: 40%;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    gap: 50px;
+    
+}
+
+button {
+    height: 150px;
+    width: 200px;
 }
