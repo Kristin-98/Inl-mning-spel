@@ -30,11 +30,11 @@ function loadSecondScene() {
     container.className = "secondScene";
 
     const button1 = document.createElement("button");
-    button1.textContent = "PLANTERA BLOMMOR";
+    button1.textContent = "Plocka Blommor";
     button1.onclick = loadThirdScene;
 
     const button2 = document.createElement("button");
-    button2.textContent = "PLOCKA BLOMMOR";
+    button2.textContent = "Plantera Blommor";
     button2.onclick = loadFourthScene;
 
     const image2 = document.createElement("img");
@@ -53,11 +53,38 @@ function loadThirdScene() {
     button3.textContent = "Tillbaka";
     button3.onclick = loadSecondScene;
 
+    const image5 = document.createElement("img");
+    image5.src = "Skärmbild (130)1.png";
+    image5.alt = "Flower";
+    image5.dataset.toggled = "false";
+
+    image5.onclick = function() {
+        if (image5.dataset.toggled === "false") {
+            image5.src = "Skärmbild (130)4.png";
+            image5.dataset.toggled = "true";
+        } else {
+            image5.src = "Skärmbild (130)1.png";
+            image5.dataset.toggled = "false";
+        }
+    };
+
+    const image6 = document.createElement("img");
+    image6.src = "Skärmbild (130)2.png";
+    image6.alt = "Flower";
+
+    const image7 = document.createElement("img");
+    image7.src = "Skärmbild (130)3.png";
+    image7.alt = "Flower";
+
+    const image8 = document.createElement("img");
+    image8.src = "Skärmbild (130).png";
+    image8.alt = "Flower";
+
     const image3 = document.createElement("img");
     image3.src = "Skärmbild (132).png";
     image3.alt = "Garden";
     
-    container.append(button3)
+    container.append(button3, image5, image6, image7, image8)
 }
 
 function loadFourthScene() {
