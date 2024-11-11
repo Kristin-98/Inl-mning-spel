@@ -7,9 +7,10 @@ function main() {
 
 function loadStartScene() {
     container.innerHTML = "";
+    container.className = "start-scene";
 
     const text = document.createElement("p");
-    text.textContent = "startDescription";
+    text.textContent = "Drömmer du om att skapa och sköta din egen trädgård? I Garden Game får du göra just det! Plantera vackra blommor, ta hand om växterna och upptäck hemligheter i din gröna oas. Låt kreativiteten flöda och bygg din drömträdgård – en plats där varje val formar ditt gröna paradis. Klicka på Börja spela för att ge dig ut på ditt trädgårdsäventyr!";
     text.className = "start";
 
     const button = document.createElement("button");
@@ -21,29 +22,17 @@ function loadStartScene() {
     image1.alt = "Garden";
     image1.className = "start-image";
 
-    container.append(image1, text, button);
+    container.append(text, button);
 }
 
+function loadSecondScene() {
+    container.innerHTML = "";
 
+    const image2 = document.createElement("img");
+    image2.src = "Skärmbild (131).png";
+    image2.alt = "Garden";
+    image2.className = "second-image";
 
-
-
-
-
-
-
-// function startGame() {
-//     document.querySelector(".start").style.display = "none";
-//     document.getElementById("gameScreen").style.display = "block";
-    
-// }
-
-// function plantFlowers() {
-//     console.log();
-// }
-
-// function loadStartScene() {
-//     const text = document.createElement("p");
-//     text.textContent
-// }
+    container.append(image2);
+}
 
