@@ -27,12 +27,25 @@ function loadStartScene() {
 
 function loadSecondScene() {
     container.innerHTML = "";
+    container.className = "secondScene";
+
+    const button1 = document.createElement("button");
+    button1.textContent = "PLANTERA";
+    button1.onclick = function() {
+        alert("du har valt...")
+    }
+
+    const button2 = document.createElement("button");
+    button2.textContent = "PLOCKA";
+    button2.onclick = function() {
+        alert("du har valt att ")
+    }
 
     const image2 = document.createElement("img");
     image2.src = "Skärmbild (131).png";
     image2.alt = "Garden";
     image2.className = "second-image";
 
-    container.append(image2);
+    container.append(button1, button2);
 }
 
