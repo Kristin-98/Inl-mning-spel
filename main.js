@@ -30,16 +30,12 @@ function loadSecondScene() {
     container.className = "secondScene";
 
     const button1 = document.createElement("button");
-    button1.textContent = "PLANTERA";
-    button1.onclick = function() {
-        alert("du har valt...")
-    }
+    button1.textContent = "PLANTERA BLOMMOR";
+    button1.onclick = loadThirdScene;
 
     const button2 = document.createElement("button");
-    button2.textContent = "PLOCKA";
-    button2.onclick = function() {
-        alert("du har valt att ")
-    }
+    button2.textContent = "PLOCKA BLOMMOR";
+    button2.onclick = loadFourthScene;
 
     const image2 = document.createElement("img");
     image2.src = "Skärmbild (131).png";
@@ -49,3 +45,32 @@ function loadSecondScene() {
     container.append(button1, button2);
 }
 
+function loadThirdScene() {
+    container.innerHTML= "";
+    container.className = "thirdScene";
+
+    const button3 = document.createElement("button");
+    button3.textContent = "Tillbaka";
+    button3.onclick = loadSecondScene;
+
+    const image3 = document.createElement("img");
+    image3.src = "Skärmbild (132).png";
+    image3.alt = "Garden";
+    
+    container.append(button3)
+}
+
+function loadFourthScene() {
+    container.innerHTML= "";
+    container.className = "fourthScene";
+
+    const button4 = document.createElement("button");
+    button4.textContent = "Tillbaka";
+    button4.onclick = loadSecondScene;
+
+    const image4 = document.createElement("img");
+    image4.src = "Skärmbild (133).png";
+    image4.alt = "Garden";
+    
+    container.append(button4)
+}

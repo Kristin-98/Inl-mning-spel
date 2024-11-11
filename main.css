@@ -45,3 +45,29 @@ button {
     padding: 10px 20px;
     font-size: 16px;
 }
+
+/* Third Page */
+
+.thirdScene {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Skärmbild\ \(132\).png);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+
+/* Fourth Page */
+
+.fourthScene {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Skärmbild\ \(133\).png);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
