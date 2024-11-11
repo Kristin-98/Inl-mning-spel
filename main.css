@@ -63,11 +63,6 @@ button {
     cursor: pointer;
 }
 
-.thirdScene img:hover {
-    transform: scale(1.02);
-    transition: 0.3s;
-}
-
 /* Fourth Page */
 
 .fourthScene {

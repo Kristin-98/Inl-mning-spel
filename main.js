@@ -60,7 +60,7 @@ function loadThirdScene() {
 
     image5.onclick = function() {
         if (image5.dataset.toggled === "false") {
-            image5.src = "Skärmbild (130)4.png";
+            image5.src = "Skärmbild (130)7.png";
             image5.dataset.toggled = "true";
         } else {
             image5.src = "Skärmbild (130)1.png";
@@ -71,14 +71,47 @@ function loadThirdScene() {
     const image6 = document.createElement("img");
     image6.src = "Skärmbild (130)2.png";
     image6.alt = "Flower";
+    image6.dataset.toggled = "false";
+
+    image6.onclick = function() {
+        if (image6.dataset.toggled === "false") {
+            image6.src = "Skärmbild (130)7.png";
+            image6.dataset.toggled = "true";
+        } else {
+            image6.src = "Skärmbild (130)2.png";
+            image6.dataset.toggled = "false";
+        }
+    };
 
     const image7 = document.createElement("img");
     image7.src = "Skärmbild (130)3.png";
     image7.alt = "Flower";
+    image7.dataset.toggled = "false";
+
+    image7.onclick = function() {
+        if (image7.dataset.toggled === "false") {
+            image7.src = "Skärmbild (130)7.png";
+            image7.dataset.toggled = "true";
+        } else {
+            image7.src = "Skärmbild (130)3.png";
+            image7.dataset.toggled = "false";
+        }
+    };
 
     const image8 = document.createElement("img");
     image8.src = "Skärmbild (130).png";
     image8.alt = "Flower";
+    image8.dataset.toggled = "false";
+
+    image8.onclick = function() {
+        if (image8.dataset.toggled === "false") {
+            image8.src = "Skärmbild (130)7.png";
+            image8.dataset.toggled = "true";
+        } else {
+            image8.src = "Skärmbild (130).png";
+            image8.dataset.toggled = "false";
+        }
+    };
 
     const image3 = document.createElement("img");
     image3.src = "Skärmbild (132).png";
