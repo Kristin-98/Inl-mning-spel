@@ -62,9 +62,7 @@ function loadThirdScene() {
         { src: "Skärmbild (130).png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" }
     ];
 
-    console.log ("arrayen med bilder", images);
 
-    
     images.forEach((imgData) => {
         const image = document.createElement("img");
         image.src = imgData.src;
@@ -105,26 +103,40 @@ function loadFourthScene() {
     image4.src = "Skärmbild (133).png";
     image4.alt = "Garden";
 
-    const emptyPotImage = document.createElement("img");
-    emptyPotImage.src = "Skärmbild (130)7.png";
-    emptyPotImage.alt = "Emty pot";
-    emptyPotImage.className = "pot";
 
-    emptyPotImage.onclick = function() {
-        if (pickedFlowers.includes("flower")) {
-            emptyPotImage.src = "Skärmbild (130)1.png";
-            pickedFlowers.splice(pickedFlowers.indexOf("flower"), 1);
-        } else {
-            alert("Du måste plocka minst en blomma för att kunna plantera något");
-        }
-    };
+    for (let i = 0; i < 4; i++) {
+        const emptyPotImage = document.createElement("img");
+        emptyPotImage.src = "Skärmbild (130)7.png";
+        emptyPotImage.alt = "Empty pot" + (i + 1);
+        emptyPotImage.className = "pot";
 
-    container.append(button4, emptyPotImage);
+        emptyPotImage.onclick = function() {
+            if (pickedFlowers.length > 0) {
+                const flowerToPlant = pickedFlowers.shift();
+                emptyPotImage.src = flowerToPlant;
+                emptyPotImage.onclick = null;
+                flowersPicked = true;
+            } else {
+                alert("Du måste plocka minst en blomma för att kunna plantera något");
+            }
+        };
+        
+
+        container.append(button4, emptyPotImage);
+    }
+
+    
+    container.append(pickedFlowers);
 }
 
-// function pickUpFlowers () {
-//     ObjectContainer.removeChild(button);
-//     pickedFlowers.push("flower");
+
+
+
+// const listOfItems = [];
+
+// function pickUpFlower(button) {
+//     container.removeChild(button);
+//     listOfItems.push("sunflower");
 // }
 
 // function loadThirdScene() {
@@ -134,6 +146,14 @@ function loadFourthScene() {
 //     const button3 = document.createElement("button");
 //     button3.textContent = "Tillbaka";
 //     button3.onclick = loadSecondScene;
+
+//     container.innerText = "";
+//     const object1 = document.createElement("button");
+//     object1.textContent = "sunflower";
+//     object1.onclick = function () {
+//         pickUpFlower(object1);
+//     };
+//     container.append(object1);
 
 //     const image5 = document.createElement("img");
 //     image5.src = "Skärmbild (130)1.png";
@@ -199,9 +219,58 @@ function loadFourthScene() {
 //     image3.src = "Skärmbild (132).png";
 //     image3.alt = "Garden";
 
-//     ObjectContainer.innerText = "";
-//     const object1 = document.createElement("img");
+    
     
 //     container.append(button3, image5, image6, image7, image8)
 // }
 
+// function loadFourthScene() {
+//         container.innerHTML= "";
+//         container.className = "fourthScene";
+    
+//         const button4 = document.createElement("button");
+//         button4.textContent = "Tillbaka";
+//         button4.onclick = loadSecondScene;
+    
+//         const image4 = document.createElement("img");
+//         image4.src = "Skärmbild (133).png";
+//         image4.alt = "Garden";
+
+//         if (listOfItems.includes("sunflower")) {
+//             image4.onclick = loadSecondScene;
+//         } else {
+//             image4.onclick = function () {
+//                 alert("plocka blommor");
+//             };
+//             container.innerText ="";
+//         }
+
+//     container.append(button4, image4)
+// }
+
+
+// const listOfItems [];
+// tom html skapade nyckel behöver göra en funktion
+// ObjectContainer.innerText = "";
+// const object1 = document.createElement("button");
+// object1.textContent = "nyckel";
+// object1.onclick = function () {
+//     pickUpKey(object1);
+// };
+
+// ObjectContainer.append(object1);
+// funktion som hämtar nyckeln
+// function pickUpKey(button) {
+//     ObjectContainer.removeChild(button);
+//     listOfItems.push("key");
+// }
+
+// if sats 
+// if (listOfItems.includes("key")) {
+//     image1.onclick = loadettrum;
+// } else {
+//     image1.onclick = function () {
+//         alert("hitta nyckel");
+//     };
+//     ObjectContainer.innerText ="";
+// }
