@@ -62,7 +62,7 @@ function loadThirdScene() {
         { src: "Skärmbild (130).png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" }
     ];
 
-    console.log ("arrayen med biler", images);
+    console.log ("arrayen med bilder", images);
 
     
     images.forEach((imgData) => {
@@ -105,15 +105,21 @@ function loadFourthScene() {
     image4.src = "Skärmbild (133).png";
     image4.alt = "Garden";
 
-    if(pickedFlowers.includes("flower")) {
-        image4.onclick = loadThirdScene;
-    } else {
-        image4.onclick = function () {
-            prompt("Du måste plocka blommor först");
-        };
-    }
-    container.appendChild(image4);
-    container.appendChild(button4);
+    const emptyPotImage = document.createElement("img");
+    emptyPotImage.src = "Skärmbild (130)7.png";
+    emptyPotImage.alt = "Emty pot";
+    emptyPotImage.className = "pot";
+
+    emptyPotImage.onclick = function() {
+        if (pickedFlowers.includes("flower")) {
+            emptyPotImage.src = "Skärmbild (130)1.png";
+            pickedFlowers.splice(pickedFlowers.indexOf("flower"), 1);
+        } else {
+            alert("Du måste plocka minst en blomma för att kunna plantera något");
+        }
+    };
+
+    container.append(button4, emptyPotImage);
 }
 
 // function pickUpFlowers () {
