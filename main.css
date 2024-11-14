@@ -1,8 +1,15 @@
+
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Dosis;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+.dosis {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 /* First Page */
@@ -19,8 +26,9 @@ body {
     height: 100vh;
 }
 
-p {
+h1 {
     background-color: white;
+    font-size: 16px;
     padding: 30px;
     width: 60%;
     border-radius: 10px;
@@ -44,13 +52,19 @@ button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: "Dosis", sans-serif;    
 }
 
 /* Third Page */
 
 .thirdScene {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     background-image: url(Skärmbild\ \(132\).png);
@@ -63,15 +77,37 @@ button {
     cursor: pointer;
 }
 
+p .options {
+    width: 100px;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+}
+
 /* Fourth Page */
 
 .fourthScene {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     background-image: url(Skärmbild\ \(133\).png);
     background-size: cover;
     height: 100vh;
     background-position: center;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
 }

@@ -9,8 +9,8 @@ function loadStartScene() {
     container.innerHTML = "";
     container.className = "start-scene";
 
-    const text = document.createElement("p");
-    text.textContent = "Drömmer du om att skapa och sköta din egen trädgård? I Garden Game får du göra just det! Plantera vackra blommor, ta hand om växterna och upptäck hemligheter i din gröna oas. Låt kreativiteten flöda och bygg din drömträdgård – en plats där varje val formar ditt gröna paradis. Klicka på Börja spela för att ge dig ut på ditt trädgårdsäventyr!";
+    const text = document.createElement("h1");
+    text.textContent = "Välkommen till Garden Game! Drömmer du om att skapa och sköta din egen trädgård? I Garden Game får du göra just det! Plantera vackra blommor, ta hand om växterna och upptäck hemligheter i din gröna oas. Låt kreativiteten flöda och bygg din drömträdgård – en plats där varje val formar ditt gröna paradis. Klicka på Börja spela för att ge dig ut på ditt trädgårdsäventyr!";
     text.className = "start";
 
     const button = document.createElement("button");
@@ -51,6 +51,10 @@ function loadThirdScene() {
     container.innerHTML = "";
     container.className = "thirdScene";
 
+    const text = document.createElement("h2");
+    text.textContent = "Tryck på valfri blomma och plocka med den till Plantera Blommor";
+    text.className = "Options";
+
     const button3 = document.createElement("button");
     button3.textContent = "Tillbaka";
     button3.onclick = loadSecondScene;
@@ -87,7 +91,7 @@ function loadThirdScene() {
         container.appendChild(image);
     });
 
-    container.append(button3);
+    container.append(button3, text);
 }
 
 
@@ -98,6 +102,10 @@ function loadFourthScene() {
     const button4 = document.createElement("button");
     button4.textContent = "Tillbaka";
     button4.onclick = loadSecondScene;
+
+    const text = document.createElement("h3");
+    text.textContent = "Tryck på valfri kruka för att plantera dina blommor!";
+    text.className = "";
 
     const image4 = document.createElement("img");
     image4.src = "Skärmbild (133).png";
@@ -120,13 +128,9 @@ function loadFourthScene() {
                 alert("Du måste plocka minst en blomma för att kunna plantera något");
             }
         };
-        
-
-        container.append(button4, emptyPotImage);
+        container.append(emptyPotImage);
     }
-
-    
-    container.append(pickedFlowers);
+    container.append(pickedFlowers, button4, text);
 }
 
 
