@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", main);
 
 function main() {
     loadStartScene();
+    loadPickedFlowersFromStorage();
 }
 
 function loadStartScene() {
@@ -47,6 +48,17 @@ function loadSecondScene() {
 
 const pickedFlowers = [];
 
+function savePickedFlowersToStorage() {
+    localStorage.setItem("pickedFlowers", JSON.stringify(pickedFlowers));
+}
+
+function loadPickedFlowersFromStorage() {
+    const savedFlowers = JSON.parse(localStorage.getItem("pickedFlowers"));
+    if (savedFlowers) {
+        pickedFlowers.push(...savedFlowers);
+    }
+}
+
 function loadThirdScene() {
     container.innerHTML = "";
     container.className = "thirdScene";
@@ -66,24 +78,27 @@ function loadThirdScene() {
         { src: "Skärmbild (130).png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" }
     ];
 
-
     images.forEach((imgData) => {
         const image = document.createElement("img");
         image.src = imgData.src;
         image.alt = imgData.alt;
         image.dataset.toggled = "false";
 
+        console.log(imgData.src);
+
         image.onclick = function() {
             if (image.dataset.toggled === "false") {
                 image.src = imgData.toggledSrc;
                 image.dataset.toggled = "true";
-                pickedFlowers.push("flower");
+                pickedFlowers.push(imgData.src);
+                savePickedFlowersToStorage();
             } else {
                 image.src = imgData.src;
                 image.dataset.toggled = "false";
-                const index = pickedFlowers.indexOf("flower");
+                const index = pickedFlowers.indexOf(imgData.src);
                 if (index > -1) {
                     pickedFlowers.splice(index, 1);
+                    savePickedFlowersToStorage();
                 }
             }
         };
@@ -123,14 +138,14 @@ function loadFourthScene() {
                 const flowerToPlant = pickedFlowers.shift();
                 emptyPotImage.src = flowerToPlant;
                 emptyPotImage.onclick = null;
-                flowersPicked = true;
+                savePickedFlowersToStorage();
             } else {
                 alert("Du måste plocka minst en blomma för att kunna plantera något");
             }
         };
         container.append(emptyPotImage);
     }
-    container.append(pickedFlowers, button4, text);
+    container.append(button4, text);
 }
 
 
