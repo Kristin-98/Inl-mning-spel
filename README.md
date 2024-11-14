@@ -11,7 +11,7 @@ Garden Game är ett enkelt webbläsarspel där du kan skapa din egen trädgård.
 ## Så här använder du spelet
 1. Klona projektet:
     ```bash
-    git clone 
+    git clone https://github.com/Kristin-98/Inl-mning-spel.git
     ```
 2. Öppna `index.html` i en webbläsare och börja spela!
 
