@@ -109,7 +109,6 @@ function loadThirdScene() {
     container.append(button3, text);
 }
 
-
 function loadFourthScene() {
     container.innerHTML= "";
     container.className = "fourthScene";
@@ -126,6 +125,7 @@ function loadFourthScene() {
     image4.src = "Skärmbild (133).png";
     image4.alt = "Garden";
 
+    let plantedFlowersCount = 0;
 
     for (let i = 0; i < 4; i++) {
         const emptyPotImage = document.createElement("img");
@@ -138,7 +138,11 @@ function loadFourthScene() {
                 const flowerToPlant = pickedFlowers.shift();
                 emptyPotImage.src = flowerToPlant;
                 emptyPotImage.onclick = null;
+                plantedFlowersCount++;
                 savePickedFlowersToStorage();
+                if (plantedFlowersCount === 4) {
+                    alert("Bra jobbat, du har nu planterat alla blommor!");
+                }
             } else {
                 alert("Du måste plocka minst en blomma för att kunna plantera något");
             }
