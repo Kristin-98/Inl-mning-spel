@@ -6,6 +6,9 @@ function main() {
     loadPickedFlowersFromStorage();
 }
 
+/**
+ * Laddar startscenen och starttexten.
+ */
 function loadStartScene() {
     container.innerHTML = "";
     container.className = "start-scene";
@@ -26,6 +29,9 @@ function loadStartScene() {
     container.append(text, button);
 }
 
+/**
+ * Laddar den andra scenen där användaren kan välja att antingen plantera eller plocka blommor.
+ */
 function loadSecondScene() {
     container.innerHTML = "";
     container.className = "secondScene";
@@ -48,10 +54,16 @@ function loadSecondScene() {
 
 const pickedFlowers = [];
 
+/**
+ * Sparar de plockade blommorna i webbläsarens localStorage.
+ */
 function savePickedFlowersToStorage() {
     localStorage.setItem("pickedFlowers", JSON.stringify(pickedFlowers));
 }
 
+/**
+ * Hämtar de tidigare plockade blommorna från localStorage och lägger till dem i listan av plockade blommor.
+ */
 function loadPickedFlowersFromStorage() {
     const savedFlowers = JSON.parse(localStorage.getItem("pickedFlowers"));
     if (savedFlowers) {
@@ -59,6 +71,9 @@ function loadPickedFlowersFromStorage() {
     }
 }
 
+/**
+ * Laddar den tredje scenen där användaren kan välja att plocka valfria blommor.
+ */
 function loadThirdScene() {
     container.innerHTML = "";
     container.className = "thirdScene";
@@ -71,6 +86,9 @@ function loadThirdScene() {
     button3.textContent = "Tillbaka";
     button3.onclick = loadSecondScene;
 
+    /**
+    * Array.
+    */
     const images = [
         { src: "Skärmbild (130)1.png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" },
         { src: "Skärmbild (130)2.png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" },
@@ -78,14 +96,21 @@ function loadThirdScene() {
         { src: "Skärmbild (130).png", alt: "Flower", toggledSrc: "Skärmbild (130)7.png" }
     ];
 
+    /**
+    * Laddar och visar tillgängliga blommor som kan plockas av användaren.
+    * Varje blomma är klickbar och kan togglas mellan ett "plockat" och "inte plockat" läge.
+    */
     images.forEach((imgData) => {
         const image = document.createElement("img");
         image.src = imgData.src;
         image.alt = imgData.alt;
         image.dataset.toggled = "false";
 
-        console.log(imgData.src);
-
+        /**
+        * Hanterar händelser för klick på blomman.
+        * Om blomman är "oplockad" (toggled=false), plockas den och läggs till i "pickedFlowers".
+        * Om blomman redan är plockad (toggled=true), släpps den och tas bort från "pickedFlowers".
+        */
         image.onclick = function() {
             if (image.dataset.toggled === "false") {
                 image.src = imgData.toggledSrc;
@@ -109,6 +134,9 @@ function loadThirdScene() {
     container.append(button3, text);
 }
 
+/**
+ * Laddar den fjärde scenen där användaren kan välja att plantera sina blommor som den plockat.
+ */
 function loadFourthScene() {
     container.innerHTML= "";
     container.className = "fourthScene";
@@ -127,6 +155,12 @@ function loadFourthScene() {
 
     let plantedFlowersCount = 0;
 
+    /**
+    * Skapar en rad med tomma krukor där användaren kan plantera blommor.
+    * När användaren klickar på en kruka och har plockade blommor, 
+    * planteras en blomma i krukan och krukan blir inaktiv.
+    * Om alla blommor är planterade, visas ett meddelande.
+    */
     for (let i = 0; i < 4; i++) {
         const emptyPotImage = document.createElement("img");
         emptyPotImage.src = "Skärmbild (130)7.png";
