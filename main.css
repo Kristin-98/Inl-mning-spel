@@ -64,7 +64,7 @@ button {
 
 .thirdScene {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(Skärmbild\ \(132\).png);
@@ -94,7 +94,7 @@ h2 {
 
 .fourthScene {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(Skärmbild\ \(133\).png);

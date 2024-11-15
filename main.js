@@ -78,8 +78,11 @@ function loadThirdScene() {
     container.innerHTML = "";
     container.className = "thirdScene";
 
+    const imagesContainer = document.createElement("div");
+    imagesContainer.className = "images-container";
+
     const text = document.createElement("h2");
-    text.textContent = "Tryck på valfri blomma och plocka med den till Plantera Blommor";
+    text.textContent = "Tryck på valfri blomma och ta med den till Plantera Blommor";
     text.className = "Options";
 
     const button3 = document.createElement("button");
@@ -128,10 +131,11 @@ function loadThirdScene() {
             }
         };
 
-        container.appendChild(image);
+        // container.appendChild(image);
+        imagesContainer.appendChild(image);
     });
 
-    container.append(button3, text);
+    container.append(imagesContainer, text, button3);
 }
 
 /**
@@ -140,6 +144,9 @@ function loadThirdScene() {
 function loadFourthScene() {
     container.innerHTML= "";
     container.className = "fourthScene";
+
+    const imagesContainer = document.createElement("div");
+    imagesContainer.className = "images-container";
 
     const button4 = document.createElement("button");
     button4.textContent = "Tillbaka";
@@ -181,9 +188,10 @@ function loadFourthScene() {
                 alert("Du måste plocka minst en blomma för att kunna plantera något");
             }
         };
-        container.append(emptyPotImage);
+        // container.append(emptyPotImage);
+        imagesContainer.appendChild(emptyPotImage);
     }
-    container.append(button4, text);
+    container.append(imagesContainer, text, button4);
 }
 
 
