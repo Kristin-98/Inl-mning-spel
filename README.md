@@ -13,7 +13,7 @@ Garden Game är ett enkelt webbläsarspel där du kan skapa din egen trädgård.
     ```bash
     git clone https://github.com/Kristin-98/Inl-mning-spel.git
     ```
-2. Öppna `index.html` i en webbläsare och börja spela!
+2. Öppna https://kristin-98.github.io/Inl-mning-spel/ i en webbläsare och börja spela!
 
 ## Licens
 Detta projekt är licensierat under MIT-licensen.
