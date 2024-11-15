@@ -7,7 +7,9 @@ function main() {
 }
 
 /**
- * Laddar startscenen och starttexten.
+ * Laddar startscenen och visar introduktionstext och startknapp.
+ * @param {string} welcomeText - Välkomstmeddelande som visas för användaren.
+ * @param {string} buttonText - Text på startknappen.
  */
 function loadStartScene() {
     container.innerHTML = "";
